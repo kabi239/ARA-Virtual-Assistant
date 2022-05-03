@@ -1,4 +1,3 @@
-
 import pyttsx3
 import speech_recognition as sr
 import datetime
@@ -246,35 +245,35 @@ if __name__=='__main__':
         elif "can you translate" in statement:
             speak("what language should i translate to")
             to_lang = destination_language()
-            while (to_lang not in dic):
-                print("Language in which you are trying\
-                to convert is currently not available ,\
-                please input some other language")
-            #to_lang = destination_language()
-  
-            to_lang = dic[dic.index(to_lang)+1]
-# invoking Translator
-            translator = Translator()
-            speak("What would you like to translate")
-            query=takeCommand()
-  # Translating from src to dest
-            text_to_translate = translator.translate(query, dest=to_lang)
-            text = text_to_translate.text
-# Using Google-Text-to-Speech ie, gTTS() method
-# to speak the translated text into the
-# destination language which is stored in to_lang.
-# Also, we have given 3rd argument as False because
-# by default it speaks very slowly
-            speak = gTTS(text=text, lang=to_lang, slow=False)
-# Using save() method to save the translated
-# speech in capture_voice.mp3
-            speak.save("captured_voice.mp3")
-# Using OS module to run the translated voice.
-            playsound('captured_voice.mp3')
-            os.remove('captured_voice.mp3')
-# Printing Output
-            print(text)
-            
-
-
-       
+            while(True):
+                while (to_lang not in dic):
+                    print("Language in which you are trying\
+                    to convert is currently not available ,\
+                    please input some other language")
+                    speak("Language in which you are trying\
+                    to convert is currently not available ,\
+                    please input some other language")
+                #to_lang = destination_language()
+    
+                to_lang = dic[dic.index(to_lang)+1]
+    # invoking Translator
+                translator = Translator()
+                speak("What would you like to translate")
+                query=takeCommand()
+    # Translating from src to dest
+                text_to_translate = translator.translate(query, dest=to_lang)
+                text = text_to_translate.text
+    # Using Google-Text-to-Speech ie, gTTS() method
+    # to speak the translated text into the
+    # destination language which is stored in to_lang.
+    # Also, we have given 3rd argument as False because
+    # by default it speaks very slowly
+                speak = gTTS(text=text, lang=to_lang, slow=False)
+    # Using save() method to save the translated
+    # speech in capture_voice.mp3
+                speak.save("captured_voice.mp3")
+    # Using OS module to run the translated voice.
+                playsound('captured_voice.mp3')
+                os.remove('captured_voice.mp3')
+    # Printing Output
+                print(text)
