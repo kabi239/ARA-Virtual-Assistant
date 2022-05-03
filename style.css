@@ -1,0 +1,162 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: black;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+}
+
+.speech {
+  font-family: Verdana;
+  color: #3ee0f5;
+  position: relative;
+  width: 200px;
+  height: 100px;
+  text-align: left;
+  line-height: 20px;
+  background-color: black;
+  border: 3px solid #666;
+  border-radius: 30px;
+  box-shadow: inset 0 0 14px #3ee0f5;
+  margin: 30px auto;
+  z-index: 1000;
+  word-break: break-all;
+  padding: 10px 20px 20px 10px;
+  vertical-align: middle;
+  max-width:90%;
+}
+
+.content {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 10000;
+  box-sizing: border-box;
+  pointer-events: none;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.content:after,
+.content:before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 10000;
+  box-sizing: border-box;
+  pointer-events: none;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.content:before {
+  background-image: repeating-linear-gradient( 0deg, rgba(0, 0, 0, .4), transparent 2px, rgba(0, 0, 0, .4) 1px, transparent 1px );
+  animation: jiggle .2s linear infinite;
+}
+
+.content:after {
+  background-image: repeating-linear-gradient( 90deg, rgba(0, 0, 0, .4) 1px, transparent 2px, rgba(0, 0, 0, .2) 1px, transparent 1px );
+  animation: wiggle .2s linear infinite;
+}
+
+
+@keyframes wiggle {
+  0% {
+    margin-left: -1px;
+  }
+
+  50% {
+    margin-left: 1px;
+  }
+
+  100% {
+    margin-left: 0px;
+  }
+}
+
+@keyframes jiggle {
+  0% {
+    margin-top: -1px;
+  }
+
+  50% {
+    margin-top: 1px;
+  }
+
+  100% {
+    margin-top: 0px;
+  }
+}
+
+.speech:after,
+.speech:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 100%;
+  z-index: 1001;
+}
+
+.speech:after {
+  left: 32px;
+  border: 12px solid;
+  border-color: rgba(0,0,0,1) transparent transparent rgba(0,0,0,1);
+}
+
+.speech:before {
+  left: 30px;
+  border: 15px solid;
+  border-color: #666 transparent transparent #666;
+}
+
+.txtLine {
+  position: absolute;
+  left:5px;
+  display: block;
+  width: 100%;
+}
+
+.txtLine div {
+  position: absolute;
+  left:10px;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.show {
+  padding-right: 20px;
+}
+
+.show div {
+  right: 0px;
+  height: 100%;
+  width: 20px;
+}
+
+.show div:before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  animation: letters .2s linear infinite;
+}
+
+
+.hide {
+  overflow: hidden;
+  width: 50px;
+  visibility: hidden;
+}

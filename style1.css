@@ -1,0 +1,55 @@
+body{
+margin: 750px;
+padding: 0;
+}
+
+.smile{
+    position: absolute;
+    top: 50%;
+    left: 50;
+    transform: translate(-50%,-50%);
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    border-radius: 50%;
+    border: 5px solid black;
+}
+
+.eyes::before,.eyes::after{
+  content: " ";
+  position: absolute;
+  top: 30%;
+  width: 25px;
+  height: 25px;
+  background: #420;
+  border-radius: 50%;
+  transition:  0.5s;
+}
+.eyes::before{
+    left: 25%;
+}
+.eyes:after{
+    right: 25%;
+}
+.smile:hover.eyes:before,.smile:hover.eyes:after{
+    width: 30px;
+    height: 45px;
+}
+
+.lips{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 6px solid transparent;
+    border-bottom: 10px solid #420;
+    border-radius: 0;
+    transition: 0.5s;
+    top:20%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+.smile:hover.lips{
+    width: 130px;
+    border-radius: 50%;
+}
